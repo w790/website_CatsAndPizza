@@ -23,7 +23,7 @@ def add_pizzas(target, connection, **kw):
 event.listen(Pizza.__table__, "after_create", add_pizzas)
 
 Base.metadata.create_all(bind = engine)
-SessionLocal = sessionmaker(autoFlush=False,bind = engine)
+SessionLocal = sessionmaker(autoflush=False,bind = engine)
 
 def get_db(): # Создание объекта подключения к базе данных
     db = SessionLocal()
